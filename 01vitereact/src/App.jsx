@@ -1,12 +1,23 @@
 import Test from './test.jsx'
 
-function App() {
+// function App() {
+  
+//   return(
+//     <Test/>
+//     //this can also be run as 'Test()'
+//   )
+// }
 
-  // return (
-  //     <h1>React with Vite || Raj De Modak ||</h1>    
-  // )
-  return(
-    <Test/>
+
+function App() {
+  const username="Raj De Modak"
+  return (
+      <>
+        <Test/>
+        <h1>React with Vite || {username} ||</h1>
+        <p>test Para</p>
+      </>
+
   )
 }
 
