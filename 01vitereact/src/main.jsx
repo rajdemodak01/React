@@ -16,6 +16,8 @@ const anotherElement=(
   <a href="https://google.com" target='_blank'>Visit Google</a>
 )
 
+
+//proper syntax
 const reactElement2=React.createElement(
   'a',
   {
@@ -30,5 +32,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   // </React.StrictMode>,
 
   // anotherElement//using object to render
-  // reactElement2//rendering through object //this tyoe of properties of object is used by React
+  // reactElement2//rendering through object //this type of properties of object is used by React
 )
