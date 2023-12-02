@@ -1,5 +1,7 @@
 # Notes for context api
 
+## React-toolkit(RTK), React-redux and Zustand are libraries to handle state
+
 ## ThemeBtn UI
 
 ```javascript
@@ -102,6 +104,7 @@ export default function Card() {
 }
 
 ```
+
 ## App UI
 
 ```javascript
@@ -140,4 +143,3 @@ export default {
 
 
 ```
-
