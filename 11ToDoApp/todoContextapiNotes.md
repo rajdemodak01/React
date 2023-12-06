@@ -1,20 +1,35 @@
-import React, { useState } from 'react'
-import { useTodo } from '../contexts/TodoContext';
+# todo context api notes
 
+## Todo Form UI
+
+```javascript
+function TodoForm() {
+    
+
+    return (
+        <form  className="flex">
+            <input
+                type="text"
+                placeholder="Write Todo..."
+                className="w-full border border-black/10 rounded-l-lg px-3 outline-none duration-150 bg-white/20 py-1.5"
+            />
+            <button type="submit" className="rounded-r-lg px-3 py-1 bg-green-600 text-white shrink-0">
+                Add
+            </button>
+        </form>
+    );
+}
+
+export default TodoForm;
+
+
+```
+
+## Todo Item UI
+
+```javascript
 function TodoItem({ todo }) {
-    const [isTodoEditable, setIsTodoEditable] = useState(false)
-    const [todoMsg,setTodoMsg]=useState(todo.todo)
-    const {updateTodo,deleteTodo,toggleComplete}=useTodo()
-
-
-    const editTodo=()=>{
-        updateTodo(todo.id,{...todo,todo:todoMsg})
-        setIsTodoEditable(false)
-    }
-
-    const toggleCompleted=()=>{
-        toggleComplete(todo.id)
-    }
+    
 
     return (
         <div
@@ -37,7 +52,6 @@ function TodoItem({ todo }) {
                 onChange={(e) => setTodoMsg(e.target.value)}
                 readOnly={!isTodoEditable}
             />
-
             {/* Edit, Save Button */}
             <button
                 className="inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0 disabled:opacity-50"
@@ -52,7 +66,6 @@ function TodoItem({ todo }) {
             >
                 {isTodoEditable ? "📁" : "✏️"}
             </button>
-
             {/* Delete Todo Button */}
             <button
                 className="inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0"
@@ -65,3 +78,21 @@ function TodoItem({ todo }) {
 }
 
 export default TodoItem;
+
+```
+
+## App js UI
+
+```javascript
+<div className="bg-[#172842] min-h-screen py-8">
+                <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-white">
+                    <h1 className="text-2xl font-bold text-center mb-8 mt-2">Manage Your Todos</h1>
+                    <div className="mb-4">
+                        {/* Todo form goes here */} 
+                    </div>
+                    <div className="flex flex-wrap gap-y-3">
+                        {/*Loop and Add TodoItem here */}
+                    </div>
+                </div>
+            </div>
+```
