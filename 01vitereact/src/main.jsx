@@ -17,13 +17,16 @@ const anotherElement=(
 )
 
 
+const anotheruser="Chai aur code"
 //proper syntax
 const reactElement2=React.createElement(
-  'a',
-  {
-    href:"https://google.com", target:"_blank"
+  'a',//type of the element
+  {//if you want to set any attribute then write this, else keep below attribute part empty
+    href:"https://google.com",
+    target:"_blank"
   },
-  "click me to visit Google"
+  "click me to visit Google",//children
+  anotheruser//Evaluated Expression//we can inject variable here(using JS in HTML)
 )
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -31,6 +34,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   // </React.StrictMode>,
 
+  //reactElement//this is not run, as we cannot use only object to render, it should create an element//We need proper format/arguments to be passed in the desired manner
   // anotherElement//using object to render
   // reactElement2//rendering through object //this type of properties of object is used by React
 )

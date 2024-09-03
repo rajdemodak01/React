@@ -14,7 +14,7 @@ export const todoSlice = createSlice({
         addTodo:(state,action)=>{
             const todo={
                 id:nanoid(),
-                text: action.payload//palload is a object which may contain id or text
+                text: action.payload//payload is a object which may contain id or text
             }
             state.todos.push(todo)
         },

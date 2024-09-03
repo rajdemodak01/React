@@ -4,10 +4,10 @@ import useCurrencyInfo from './hooks/useCurrencyInfo'
 
 function App() {
 
-  const [amount,setAmount]=useState(0)
+  const [amount,setAmount]=useState()
   const [from, setFrom]=useState("usd")
   const [to, setTo]=useState("inr")
-  const [convertedAmount,setConvertedAmount]=useState(0)
+  const [convertedAmount,setConvertedAmount]=useState()
 
   const currencyInfo=useCurrencyInfo(from)
 
@@ -71,6 +71,7 @@ function App() {
                             currencyOptions={options}
                             selectCurrency={to}
                             amountDisable//by default in this way amountDisable is set to true
+                            //same as amountDisable=true
                         />
                     </div>
                     <button type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg">

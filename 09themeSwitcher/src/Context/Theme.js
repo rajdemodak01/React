@@ -4,7 +4,7 @@ import React from "react";
 export const ThemeContext=React.createContext(
     {
         themeMode:'light',
-        //here we are declaring two functions darkTheme and lightTheme and will bbe defined in the App.jsx file
+        //here we are declaring two functions darkTheme and lightTheme and will be defined in the App.jsx file
         darkTheme:()=>{},
         lightTheme:()=>{}
     }

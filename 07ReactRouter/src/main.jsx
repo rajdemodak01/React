@@ -12,6 +12,9 @@ import User from './components/User/User.jsx'
 import Github from './components/Github/Github.jsx'//importing compnnents
 import {GithubInfoLoader} from './components/Github/Github.jsx'//importing methods/functions
 
+import GithubUser from './components/GithubUser/GithubUser.jsx'
+import { GithubInfoLoader2 } from './components/GithubUser/GithubUser.jsx'
+
 //one way to define router
 // const router=createBrowserRouter([
 //   {
@@ -49,6 +52,10 @@ const router=createBrowserRouter(
         loader={GithubInfoLoader}
         path='github' 
         element={<Github/>}/>
+      <Route
+      loader={GithubInfoLoader2}
+      path='github/:user_name'
+      element ={<GithubUser/>}/>
     </Route>
   )
 )

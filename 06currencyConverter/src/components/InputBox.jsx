@@ -14,10 +14,11 @@ function InputBox({
 }) {
    
     //useId() hook is used to generate a random unique id
+    //optimization
     const amountInputId=useId()
 
     return (
-        <div className={`bg-white p-3 rounded-lg text-sm flex `}>
+        <div className={`bg-white p-3 rounded-lg text-sm flex ${className}`}>
             <div className="w-1/2">
                 <label htmlFor={amountInputId} className="text-black/40 mb-2 inline-block">
                     {label}
@@ -29,7 +30,7 @@ function InputBox({
                     placeholder="Amount"
                     disabled={amountDisable}
                     value={amount}
-                    onChange={(e)=>onAmountChange && onAmountChange(Number(e.target.value))}  
+                    onChange={(e)=>onAmountChange && onAmountChange(e.target.value ? Number(e.target.value) : null)}  
                 />
             </div>
             <div className="w-1/2 flex flex-wrap justify-end text-right">

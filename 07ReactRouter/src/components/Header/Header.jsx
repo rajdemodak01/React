@@ -37,8 +37,8 @@ export default function Header() {
                             <li>
                                 <NavLink
                                 to="/"
-                                    //we can use callback in className and here we get some Parameters that we can use like isActive
-                                    className={(isActive) =>
+                                    //we can use callback in className and here we get some Parameters that we can use like isActive to check whether we are on the same page or not
+                                    className={({isActive}) =>
                                         `block py-2 pr-4 pl-3 duration-200 
                                         ${isActive ? "text-orange-700":"text-gray-700"}
                                         border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-green-700 lg:p-0`
@@ -51,7 +51,7 @@ export default function Header() {
                                 <NavLink
                                     to="/about"
                                     //we can use callback in className and here we get some Parameters that we can use like isActive
-                                    className={(isActive) =>
+                                    className={({isActive}) =>
                                         `block py-2 pr-4 pl-3 duration-200 
                                         ${isActive ? "text-orange-700":"text-gray-700"}
                                         border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-green-700 lg:p-0`
@@ -64,7 +64,7 @@ export default function Header() {
                                 <NavLink
                                     to="/contact"
                                     //we can use callback in className and here we get some Parameters that we can use like isActive
-                                    className={(isActive) =>
+                                    className={({isActive}) =>
                                         `block py-2 pr-4 pl-3 duration-200 
                                         ${isActive ? "text-orange-700":"text-gray-700"}
                                         border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-green-700 lg:p-0`
@@ -77,7 +77,7 @@ export default function Header() {
                                 <NavLink
                                     to="/github"
                                     //we can use callback in className and here we get some Parameters that we can use like isActive
-                                    className={(isActive) =>
+                                    className={({isActive}) =>
                                         `block py-2 pr-4 pl-3 duration-200 
                                         ${isActive ? "text-orange-700":"text-gray-700"}
                                         border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-green-700 lg:p-0`

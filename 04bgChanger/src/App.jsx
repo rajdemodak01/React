@@ -13,10 +13,13 @@ function App() {
 
   return (
     <>
-      <div className={`bg-${bgColor} duration-500 h-screen w-screen flex flex-col`}>
+      <div className={`bg-${bgColor} duration-500 h-screen w-screen flex flex-col`}
+      //style={{backgroundColor:bgColor}}
+      //you can also write this to change the background color
+      >
           <footer className='flex justify-center items-center gap-4 mt-auto mb-4'>
             <button className="bg-red-500" onClick={()=>{color('red-500')}}>red</button>
-            {/* as per syntac onclick wants function to be returned everytime, that's why we use an arrow function on onclick  */}
+            {/* as per syntax onclick wants function to be returned everytime, that's why we use an arrow function on onclick  */}
             <button className="bg-green-500" onClick={()=>{color('green-500')}}>green</button>
             <button className="bg-blue-500" onClick={()=>{color('blue-500')}}>blue</button>
             <button className="bg-pink-500" onClick={()=>{color('pink-500')}}>pink</button>

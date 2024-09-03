@@ -18,6 +18,7 @@ function Card(props) {
         </p>
         <button className="mt-2 inline-flex cursor-pointer items-center text-sm font-semibold text-white">
           {props.btnText || "Visit me"} →
+          {/* we are using pipe here, if no props are passed them it will print the or statement("Visit me") */}
         </button>
       </div>
     </div>
