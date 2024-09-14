@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { TodoProvider } from "./contexts/TodoContext";
-import {TodoForm, TodoItem} from "./components/index"
+import { TodoForm, TodoItem } from "./components/index";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -40,8 +40,6 @@ function App() {
     }
   }, []);
 
-  
-
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
@@ -57,17 +55,21 @@ function App() {
           </h1>
           <div className="mb-4">
             {/* Todo form goes here */}
-            <TodoForm/>
+            <TodoForm />
           </div>
           <div className="flex flex-wrap gap-y-3">
             {/*Loop and Add TodoItem here */}
-            {todos.map((todo)=>(//if we use currly braces here we need to return something but we do not want to return anything so we used first braccket.
-
-              //there will be each div for each todo//so there must be unique id
-              <div key={todo.id} className="w-full">
-                <TodoItem todo={todo}  /> {/*passing props */}
-              </div>
-            ))}
+            {todos.map(
+              (
+                todo 
+              ) => (
+                //if we use currly braces here we need to return something but we do not want to return anything so we used first braccket.
+                //there will be each div for each todo//so there must be unique id
+                <div key={todo.id} className="w-full">
+                  <TodoItem todo={todo} /> {/*passing props */}
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>

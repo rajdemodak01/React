@@ -3,9 +3,11 @@ import {Container, Logo, LogoutBtn} from '../index'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+//we are using useNavigate to navigate to different pages
 
 function Header() {
-  //we are gettting authstatus from store
+  //we are gettting authstatus from store 
+  //we are using useSelector to get the state from store and wrint state.auth.status as we have auth slice in store and status in auth slice
   const authStatus= useSelector(state => state.auth.status)
   const navigate= useNavigate()
 
@@ -47,6 +49,7 @@ function Header() {
             </Link>
           </div>
           <ul className='flex ml-auto '>
+            {/* //we use parenthesiswhen we apply js code in html */}
             {navItems.map((item)=>
               item.active ? (
                 //where html element is repeated we need to add key
@@ -54,6 +57,8 @@ function Header() {
                   <button
                   //navigate is used to navigate to different pages
                   //to use navigate we need to import useNavigate from react-router-dom and give an url
+                  //we are using item.slug to navigate to different pages
+                  //we can also use Link from react-router-dom to navigate to different pages
                     onClick={()=>navigate(item.slug)}
                     className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
                   >{item.name}</button>

@@ -11,7 +11,7 @@ function Profile() {
   }
   return(
     <div>
-        Welcome {user.userName}
+        Welcome {user.userName} and your password is {user.password}
     </div>
   )
 }

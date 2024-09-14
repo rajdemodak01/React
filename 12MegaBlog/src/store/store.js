@@ -1,3 +1,4 @@
+//we are creating this store to track, whether the user is logged in or not
 import {configureStore} from '@reduxjs/toolkit'
 import authSlice from './authSlice'
 

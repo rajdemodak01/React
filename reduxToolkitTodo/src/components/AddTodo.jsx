@@ -3,18 +3,19 @@ import {useDispatch} from 'react-redux'
 import {addTodo} from '../features/todo/todoSlice' 
 
 function AddTodo() {
-
-    
     const [input, setInput] = useState('')
     const dispatch = useDispatch()
+    //dispatch ek reducer ko use karte hue store k andar changes karte hai
 
     const addTodoHandler = (e) => {
         e.preventDefault()
         //Dispatch reducer ko use karte hue store ko change karte hai
-        dispatch(addTodo(input))
+        if(input!=""){
+          dispatch(addTodo(input))
+        }
         setInput('')
     }
-
+    
   return (
     <form onSubmit={addTodoHandler} className="space-x-3 mt-12">
       <input

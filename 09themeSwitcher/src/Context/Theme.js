@@ -1,3 +1,5 @@
+//another way of using context api
+
 import { createContext,useContext } from "react";
 import React from "react";
 

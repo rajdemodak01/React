@@ -9,7 +9,7 @@ export const TodoContext=createContext({
         }
     ],
 
-    //functionality of these functions will be define in another file
+    //functionality of these functions will be define in another file(App.jsx)
     addTodo: (todo)=>{},
     updateTodo:(id,todo)=>{},
     deleteTodo:(id)=>{},

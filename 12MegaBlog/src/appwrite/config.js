@@ -10,13 +10,18 @@ export class Service{
         this.client
         .setEndpoint(conf.appwriteUrl)
         .setProject(conf.appwriteProjectId);
+        //how these are done is defined inside the docs of appwrite
+
         this.databases = new Databases(this.client);
         this.bucket = new Storage(this.client);
     }
 
     async createPost({title, slug, content, featuredImage, status, userId}){
         try {
+            //this is how to create document defined in appwrite
+            //if we want to store in mongo db, we will change the below part only 
             return await this.databases.createDocument(
+                //we have to pass database id, collection id, documnet id(slug here), object
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
                 slug,
@@ -35,6 +40,7 @@ export class Service{
 
     async updatePost(slug, {title, content, featuredImage, status}){
         try {
+            //how to update documnet is also defined in appwrite
             return await this.databases.updateDocument(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
@@ -52,13 +58,13 @@ export class Service{
         }
     }
 
+    //delete document is also also defined in appwrite
     async deletePost(slug){
         try {
             await this.databases.deleteDocument(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
-                slug
-            
+                slug            
             )
             return true
         } catch (error) {
@@ -67,28 +73,29 @@ export class Service{
         }
     }
 
+
+    //get only only one post
     async getPost(slug){
         try {
+            console.log("from get document")
             return await this.databases.getDocument(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
                 slug
-            
             )
         } catch (error) {
             console.log("Appwrite serive :: getPost :: error", error);
             return false
         }
     }
-
+    
     async getPosts(queries = [Query.equal("status", "active")]){
         try {
             return await this.databases.listDocuments(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
                 queries,
-                
-
+                //you can also write "[Query.equal("status", "active")]" instead of writing in the parameters
             )
         } catch (error) {
             console.log("Appwrite serive :: getPosts :: error", error);
@@ -97,7 +104,6 @@ export class Service{
     }
 
     // file upload service
-
     async uploadFile(file){
         try {
             return await this.bucket.createFile(
@@ -111,6 +117,7 @@ export class Service{
         }
     }
 
+    // file delete service
     async deleteFile(fileId){
         try {
             await this.bucket.deleteFile(
@@ -124,6 +131,8 @@ export class Service{
         }
     }
 
+
+    //in the docs of appwrite, no promise is mentioned, that's why we are not using any async, await for this
     getFilePreview(fileId){
         return this.bucket.getFilePreview(
             conf.appwriteBucketId,

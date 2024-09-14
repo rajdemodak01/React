@@ -1,11 +1,14 @@
 import React,{useId} from 'react'
 
+
 //forwardRef is used to pass ref to the child component
+//useId is used to generate unique id for the input field
 const Input=React.forwardRef(function Input({
     label,
     type='text',
     className='',
     ...props
+//ref is used to get the reference of the parent component
 },ref){
     const id=useId()
     return(
@@ -28,4 +31,4 @@ const Input=React.forwardRef(function Input({
     )
 })
 
-export default input
+export default Input

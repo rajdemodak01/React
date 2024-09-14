@@ -1,10 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit';
 
-//this file is created to track user authentications
+//this file is created to track user authentications(user is logged in or not)
 
 const initialState={
-    status:false,
-    userData:null
+    status:false,//means user is not authenticated
+    userData:null//no userdata now
 };
 
 const authSlice=createSlice({
@@ -22,6 +22,6 @@ const authSlice=createSlice({
     }
 });
 
-export const {login,logout}=authSlice.actions;
+export const {login,logout}=authSlice.actions;//authSlice.actions means the methods inside the reducers
 
 export default authSlice.reducer;
