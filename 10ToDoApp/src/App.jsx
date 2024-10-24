@@ -6,7 +6,7 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   const addTodo = (todo) => {
-    // setTodos(todo)//If we do this all the orevious todos will be replaced by the current todo which we don't want
+    // setTodos(todo)//If we do this all the previous todos will be replaced by the current todo which we don't want
     setTodos((prev) => [{ id: Date.now(), ...todo }, ...prev]);
   };
 
@@ -63,7 +63,7 @@ function App() {
               (
                 todo 
               ) => (
-                //if we use currly braces here we need to return something but we do not want to return anything so we used first braccket.
+                //if we use curly braces here we need to return something but we do not want to return anything so we used first bracket.
                 //there will be each div for each todo//so there must be unique id
                 <div key={todo.id} className="w-full">
                   <TodoItem todo={todo} /> {/*passing props */}

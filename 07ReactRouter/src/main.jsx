@@ -41,7 +41,7 @@ import { GithubInfoLoader2 } from './components/GithubUser/GithubUser.jsx'
 const router=createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout/>}>
-      {/* We can do Multiple Routing means mmultiple looping here */}
+      {/* We can do Multiple Routing means multiple looping here */}
       <Route path='' element={<Home/>}/>
       <Route path='about' element={<About/>}/>
       <Route path='contact' element={<Contact/>}/>

@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      {/* <h1>Learing About Redux toolkit</h1> */}
+      {/* <h1>Learning About Redux toolkit</h1> */}
       <AddTodo/>
       <ul className="list-none">
         {todos.map((todo)=>(todo.text!="" ? <Todos todo={todo} key={todo.id}/>: null)  

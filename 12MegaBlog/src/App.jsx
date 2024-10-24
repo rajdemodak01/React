@@ -14,7 +14,7 @@ function App() {
   //we will use the useDispatch hook to dispatch the action to the store
   const dispatch=useDispatch()
 
-  //whenever application is loaded, use a useEffect, ask whetehr loggedin or not
+  //whenever application is loaded, use a useEffect, ask whether loggedin or not
   useEffect(() => {
     authService.getCurrentuser()
     //we get a callback(function) inside try

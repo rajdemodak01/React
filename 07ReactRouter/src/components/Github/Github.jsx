@@ -27,8 +27,8 @@ function Github() {
 export default Github
 
 export const GithubInfoLoader=async()=>{
-    const responce=await fetch('https://api.github.com/users/rajdemodak01')
-    return responce.json()
+    const response=await fetch('https://api.github.com/users/rajdemodak01')
+    return response.json()
 }
 
-//here GithubInfoLoader expoting data of github which is received by Loader(in the Route of Github) in the main.jsx and then the data is received by the useLoaderData() and stored in data
+//here GithubInfoLoader exporting data of github which is received by Loader(in the Route of Github) in the main.jsx and then the data is received by the useLoaderData() and stored in data
