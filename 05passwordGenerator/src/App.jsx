@@ -43,7 +43,7 @@ function App() {
   //to use this we need to add "ref={passwordRef} in the input field"
   const passwordRef = useRef(null);
 
-  //useCallback memorise the function
+  //useCallback memorize the function
   const copyPassword = useCallback(() => {
     passwordRef.current?.select(); //select the current value of the password if present
 
